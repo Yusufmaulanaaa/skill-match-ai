@@ -1,0 +1,64 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                String                @id @default(uuid())
+  fullName          String
+  email             String                @unique
+  password          String
+  education         String?
+  interest          String?
+  createdAt         DateTime              @default(now())
+  skills            UserSkill[]
+  quizResults       QuizResult[]
+  careerRecommendations CareerRecommendation[]
+}
+
+model UserSkill {
+  id     String @id @default(uuid())
+  userId String
+  skill  String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model QuizResult {
+  id        String                @id @default(uuid())
+  userId    String
+  answers   Json
+  createdAt DateTime              @default(now())
+  user      User                  @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model CareerRecommendation {
+  id              String   @id @default(uuid())
+  userId          String
+  sessionId       String
+  careerName      String
+  matchPercentage Int
+  description     String
+  salary          Json?
+  growthRate      String?
+  marketDemand    String?
+  requiredSkills  Json
+  learningPath    Json
+  suggestedProjects Json
+  strengths       Json?
+  weaknesses      Json?
+  careerGrowth    Json?
+  geminiAnalysis  Json?
+  createdAt       DateTime @default(now())
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([sessionId])
+}

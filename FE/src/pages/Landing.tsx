@@ -2,13 +2,13 @@ import { Navbar, Button } from '@/components';
 import { Link } from 'react-router-dom';
 
 const CAREERS = [
-  { title: 'AI Engineer', description: 'Build intelligent systems and ML models.', color: 'bg-blue-50 text-blue-700 border-blue-100' },
-  { title: 'Machine Learning Engineer', description: 'Design and deploy ML pipelines.', color: 'bg-indigo-50 text-indigo-700 border-indigo-100' },
-  { title: 'Frontend Engineer', description: 'Create beautiful, responsive user interfaces.', color: 'bg-sky-50 text-sky-700 border-sky-100' },
-  { title: 'Backend Engineer', description: 'Build scalable APIs and server systems.', color: 'bg-emerald-50 text-emerald-700 border-emerald-100' },
-  { title: 'Data Scientist', description: 'Extract insights from complex datasets.', color: 'bg-violet-50 text-violet-700 border-violet-100' },
-  { title: 'Cyber Security Engineer', description: 'Protect systems and data from threats.', color: 'bg-rose-50 text-rose-700 border-rose-100' },
-  { title: 'Cloud Engineer', description: 'Design and manage cloud infrastructure.', color: 'bg-amber-50 text-amber-700 border-amber-100' },
+  { title: 'AI Engineer', description: 'Build intelligent systems and ML models.' },
+  { title: 'Machine Learning Engineer', description: 'Design and deploy ML pipelines.' },
+  { title: 'Frontend Engineer', description: 'Create beautiful, responsive user interfaces.' },
+  { title: 'Backend Engineer', description: 'Build scalable APIs and server systems.' },
+  { title: 'Data Scientist', description: 'Extract insights from complex datasets.' },
+  { title: 'Cyber Security Engineer', description: 'Protect systems and data from threats.' },
+  { title: 'Cloud Engineer', description: 'Design and manage cloud infrastructure.' },
 ];
 
 const METRICS = [
@@ -26,8 +26,8 @@ export default function Landing() {
         {/* ===== HERO ===== */}
         <section className="relative overflow-hidden border-b border-gray-100">
           {/* Subtle background pattern */}
-          <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:32px_32px] opacity-30" />
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-gray-50/50 to-transparent" />
+          <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-size-[32px_32px] opacity-30" />
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-linear-to-l from-gray-50/50 to-transparent" />
 
           <div className="relative max-w-6xl mx-auto px-6 pt-28 pb-28 md:pt-36 md:pb-36">
             <div className="max-w-3xl mx-auto text-center">
@@ -93,7 +93,7 @@ export default function Landing() {
                 className="group p-5 rounded-xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all duration-200 cursor-default"
               >
                 <div className="flex items-center gap-3 mb-2">
-                  <span className={`inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border ${career.color}`}>
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-50 text-gray-700 border border-gray-100">
                     {career.title}
                   </span>
                 </div>

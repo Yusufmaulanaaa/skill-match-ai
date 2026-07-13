@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL || 'https://backend-6viu6x3jp-yusufmaulanaaas-projects.vercel.app';
+const API_URL = import.meta.env.VITE_API_URL || 'https://backend-skillmatch.vercel.app';
 
 const api = axios.create({
   baseURL: API_URL,

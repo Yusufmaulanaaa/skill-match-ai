@@ -8,5 +8,4 @@ export const config = {
   jwtExpiresIn: process.env.JWT_EXPIRES_IN || '7d',
   geminiApiKey: process.env.GEMINI_API_KEY || '',
   databaseUrl: process.env.DATABASE_URL || '',
-  directUrl: process.env.DIRECT_URL || '',
 };
